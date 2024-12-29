@@ -58,9 +58,6 @@ nav {
     background: #004d40;
     padding: 10px;
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 nav a {
@@ -68,14 +65,18 @@ nav a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #ff9800;
 }
 
 .container {
     padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .section {
@@ -92,30 +93,29 @@ nav a:hover {
     max-width: 100%;
     height: auto;
     margin-top: 10px;
-    border-radius: 10px;
+    border-radius: 10px; /* Rounded corners for images */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.background-video {
-    width: 100%;
-    max-width: 800px; /* Set a maximum width for the video */
-    height: auto;
-    margin: 20px auto; /* Center the video and add margin to ensure space between header and video */
-    display: block;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center; /* Center the grid items */
+    align-items: center; /* Center the content vertically */
 }
 
 .type {
-    margin-bottom: 20px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .type img {
-    width: 250px; /* Set a larger fixed width for the images */
-    height: 200px; /* Set a larger fixed height for the images */
-    object-fit: cover; /* Ensure the images cover the area without distortion */
-    margin-top: 10px;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -135,4 +135,60 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Additional styles for How to Help and Contact sections */
+.section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.section ul li {
+    background: #e0f7fa;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section ul li:hover {
+    background: #b2ebf2;
+}
+
+.section p a {
+    color: #004d40;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        height: 40vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
 }
